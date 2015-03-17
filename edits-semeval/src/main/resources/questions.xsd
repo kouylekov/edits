@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+    <xsd:element name="question" type="Question"></xsd:element>
+    
+    <xsd:complexType name="Question">
+    	<xsd:sequence>
+    		<xsd:element name="questionText" type="xsd:string"></xsd:element>
+    		<xsd:element name="referenceAnswers"
+    			type="ReferenceAnswers">
+    		</xsd:element>
+    		<xsd:element name="studentAnswers" type="StudentAnswers"></xsd:element>
+    	</xsd:sequence>
+    	<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+    	<xsd:attribute name="module" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="ReferenceAnswers">
+    	<xsd:sequence>
+    		<xsd:element name="referenceAnswer"
+    			type="ReferenceAnswer" maxOccurs="unbounded" minOccurs="0">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="StudentAnswers">
+    	<xsd:sequence>
+    		<xsd:element name="studentAnswer" type="StudentAnswer" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType> 
+    
+    <xsd:complexType name="ReferenceAnswer" mixed="true">
+    	<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="StudentAnswer" mixed="true">
+    	<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+    	<xsd:attribute name="accuracy" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

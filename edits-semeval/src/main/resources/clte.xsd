@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+
+    <xsd:element name="entailment-corpus" type="CLTECorpus"></xsd:element>
+    
+    <xsd:complexType name="CLTECorpus">
+    	<xsd:sequence>
+    		<xsd:element name="pair" type="CLTEPair" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    	<xsd:attribute name="languages" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:complexType name="CLTEPair">
+    	<xsd:sequence>
+    		<xsd:element name="t1" type="xsd:string"></xsd:element>
+    		<xsd:element name="t2" type="xsd:string"></xsd:element>
+    	</xsd:sequence>
+    	<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+    	<xsd:attribute name="entailment" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

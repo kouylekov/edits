@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="entailment-corpus" type="EntailmentCorpus"></xsd:element>
+	<xsd:complexType name="EntailmentCorpus">
+		<xsd:sequence>
+			<xsd:element name="pair" type="EntailmentPair" maxOccurs="unbounded"
+				minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EntailmentPair">
+		<xsd:sequence>
+			<xsd:element name="t" type="ConllText" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+			<xsd:element name="h" type="ConllText" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="entailment" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="task" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ConllText" block="#all" final="restriction"
+		mixed="true">
+		<xsd:sequence>
+			<xsd:element name="asdsadsa" type="sadsad"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:string" use="optional" />
+	</xsd:complexType>
+
+	<xsd:element name="rules" type="Rules"></xsd:element>
+
+	<xsd:complexType name="Rules">
+		<xsd:sequence>
+			<xsd:element name="rule" type="Rule" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Rule">
+		<xsd:sequence>
+			<xsd:element name="t" type="xsd:string"></xsd:element>
+			<xsd:element name="h" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="entailment" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="probability" type="xsd:double"></xsd:attribute>
+	</xsd:complexType>
+
+
+
+	<xsd:complexType name="Attribute">
+		<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="value" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+
+    <xsd:complexType name="sadsad"></xsd:complexType>
+</xsd:schema>

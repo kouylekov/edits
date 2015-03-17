@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export EDITS_PATH=`dirname $0`/..
+
+MEMORY=3G
+JAVA=java
+
+#EDITS LIBS
+CLASSPATH=$( echo ${EDITS_PATH}/edits-core/target/edits-core-4.0-SNAPSHOT.jar . | sed 's/ /:/g') 
+
+#ADDITIONAL LIBS
+CLASSPATH=$CLASSPATH:$( echo ${EDITS_PATH}/target/dependency/*.jar . | sed 's/ /:/g') 
+
+$JAVA -mx$MEMORY -ms$MEMORY -cp $CLASSPATH  org.edits.Edits $*
